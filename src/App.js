@@ -6,9 +6,9 @@ import TodoList from "./components/TodoList";
 
 function App() {
    const [tasks, setTasks] = useState([
-      { id: 1, title: "To so list is very nice" },
-      { id: 2, title: "To so list is very nice" },
-      { id: 3, title: "To so list is very nice" },
+      { id: 1, title: "To do list is very nice 1", completed: false },
+      { id: 2, title: "To do list is very nice 2", completed: true },
+      { id: 3, title: "To do list is very nice 3", completed: true },
    ]);
 
    //  add task method
@@ -20,11 +20,34 @@ function App() {
       setTasks([...tasks, newTask]);
    };
 
+   // delete task
+   const deleteTask = (id) => {
+      const item = tasks.filter((task) => task.id !== id);
+      setTasks(item);
+   };
+
+   // clear completed tasks
+   const clearCompletedTask = (id) => {
+      const completedTask = tasks.filter((item) => item.completed !== true);
+      setTasks(completedTask);
+      console.log(completedTask);
+   };
+
+   // show tasks are done
+   const showCompletedTasks = () => {
+      const tasksDone = tasks.filter((item) => item.completed === true);
+      setTasks(tasksDone);
+   };
+
    return (
       <div className="container">
          <Header addTask={addTask} />
-         <TodoList tasks={tasks} />
-         <TodoFilter />
+         <TodoList
+            tasks={tasks}
+            onDelete={deleteTask}
+            onClear={clearCompletedTask}
+         />
+         <TodoFilter onShow={showCompletedTasks} />
          <Footer />
       </div>
    );

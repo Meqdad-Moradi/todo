@@ -128,7 +128,32 @@ select {
   border-radius: 5px;
   outline: none;
   font-size: 1rem;
-  padding: 0.3em 2.3em 0.3em 0.5em;
+  padding: 0.3em 2.3em 0.3em 1.5em;
+}
+
+.header form .form-control.check {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header form .form-control.check label {
+  display: inline !important;
+}
+
+.header form .form-control.check input#checkbox {
+  accent-color: #bf44cf;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  min-width: auto;
+  height: 15px;
+  width: 15px;
 }
 
 .header form small {

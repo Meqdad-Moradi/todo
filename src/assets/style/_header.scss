@@ -40,7 +40,27 @@
          border-radius: 5px;
          outline: none;
          font-size: 1rem;
-         padding: 0.3em 2.3em 0.3em 0.5em;
+         padding: 0.3em 2.3em 0.3em 1.5em;
+      }
+
+      .form-control.check {
+         position: absolute;
+         top: 50%;
+         left: 5px;
+         transform: translateY(-50%);
+         display: flex;
+
+         label {
+            display: inline !important;
+         }
+
+         input#checkbox {
+            accent-color: $primary;
+            align-self: start;
+            min-width: auto;
+            height: 15px;
+            width: 15px;
+         }
       }
 
       small {

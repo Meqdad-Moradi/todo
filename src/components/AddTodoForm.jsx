@@ -3,6 +3,7 @@ import { FaPlus } from "react-icons/fa";
 
 const AddTodoForm = ({ addTask }) => {
    const [title, setTitle] = useState("");
+   const [radio, setRadio] = useState(false);
    const [error, setError] = useState("");
 
    //    submit form
@@ -13,13 +14,8 @@ const AddTodoForm = ({ addTask }) => {
          setError("Plese insert your task to do!");
          return;
       }
-      addTask({ title });
+      addTask({ title, completed: radio });
       setTitle("");
-   };
-
-   //    read input value
-   const setValue = (e) => {
-      setTitle(e.currentTarget.value);
    };
 
    //    check focus state of input
@@ -32,17 +28,29 @@ const AddTodoForm = ({ addTask }) => {
    return (
       <div className="form-container">
          <form onSubmit={addItems}>
-            <label htmlFor="input">
-               Create your new to do: <span>*</span>
-            </label>
-            <input
-               type="text"
-               id="input"
-               placeholder="New to do..."
-               value={title}
-               onChange={setValue}
-            />
-            <small className={error !== "" ? "active" : ""}>{error}</small>
+            <div className="form-control">
+               <label htmlFor="input">
+                  Create your new to do: <span>*</span>
+               </label>
+               <input
+                  type="text"
+                  id="input"
+                  placeholder="New to do..."
+                  value={title}
+                  onChange={(e) => setTitle(e.currentTarget.value)}
+               />
+               <small className={error !== "" ? "active" : ""}>{error}</small>
+            </div>
+
+            <div className="form-control check">
+               <input
+                  type="checkbox"
+                  name="complete"
+                  id="checkbox"
+                  onChange={(e) => setRadio(e.currentTarget.checked)}
+               />
+            </div>
+
             <button className="submit-btn" type="submit">
                <FaPlus />
             </button>
