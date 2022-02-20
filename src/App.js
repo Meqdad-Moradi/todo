@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import TodoFilter from "./components/TodoFilter";
+import TodoList from "./components/TodoList";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   const [tasks, setTasks] = useState([
+      { id: 1, name: "To so list is very nice 😀" },
+      { id: 2, name: "To so list is very nice 😀" },
+      { id: 3, name: "To so list is very nice 😀" },
+   ]);
+
+   const addTask = (task) => {
+      const id = Math.floor(Math.random() * 1000 + 1);
+      const newTask = { id, ...task };
+
+      setTasks([...tasks, newTask]);
+
+      console.log(tasks);
+   };
+
+   console.log(tasks);
+
+   return (
+      <div className="container">
+         <Header addTask={addTask} />
+         <TodoList tasks={tasks} />
+         <TodoFilter />
+         <Footer />
+      </div>
+   );
 }
 
 export default App;

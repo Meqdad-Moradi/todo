@@ -1,0 +1,31 @@
+.todo-filter-container {
+   background-color: $black;
+   padding: 0 3em 3em;
+
+   .todo-filter {
+      border-radius: 5px;
+      background-color: $dark;
+      padding: 1em;
+      @include flex($jc: center);
+      gap: 3em;
+
+      .filter-btn {
+         background-color: transparent;
+         border: none;
+         outline: none;
+         color: $light;
+         cursor: pointer;
+         user-select: none;
+         transition: all 0.3s ease-in-out;
+
+         &.active {
+            color: $primary;
+         }
+
+         &:hover,
+         &:active {
+            color: $primary;
+         }
+      }
+   }
+}

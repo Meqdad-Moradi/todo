@@ -1,0 +1,98 @@
+.header {
+   min-height: 50vh;
+   background: linear-gradient(
+         45deg,
+         rgba(12, 79, 224, 0.8),
+         rgba(175, 52, 231, 0.8)
+      ),
+      url("./../images/background.jpg") no-repeat center / cover;
+
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: repeat(2, 1fr);
+   justify-content: space-evenly;
+   align-items: center;
+   padding: 3em;
+
+   .title {
+      z-index: 100;
+      color: $white;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+   }
+
+   //    form section
+
+   form {
+      position: relative;
+
+      label {
+         color: $white;
+         display: inline-block;
+         position: absolute;
+         bottom: 120%;
+         left: 0;
+      }
+
+      input {
+         min-width: 100%;
+         border: none;
+         border-radius: 5px;
+         outline: none;
+         font-size: 1rem;
+         padding: 0.3em 2.3em 0.3em 0.5em;
+      }
+
+      small {
+         background-color: $white;
+         color: $danger;
+         position: absolute;
+         left: 0;
+         bottom: -3rem;
+         padding: 0.3em 0.5em;
+         border-radius: 5px;
+         display: none;
+
+         &::before {
+            content: "";
+            width: 0;
+            height: 0;
+            border: 0.5em solid transparent;
+            border-top: 0;
+            border-bottom: 1em solid $white;
+            position: absolute;
+            left: 10px;
+            bottom: 90%;
+         }
+
+         &.active {
+            display: block;
+         }
+      }
+   }
+
+   .submit-btn {
+      border-radius: 5px;
+      background: transparent;
+      border: none;
+      outline: none;
+      user-select: none;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      right: 5px;
+      transform: translateY(-50%);
+      background-color: $primary;
+      color: $white;
+      padding: 0.3em;
+      display: grid;
+      align-items: center;
+      align-content: center;
+      transition: all 0.4s ease-in-out;
+
+      &:hover,
+      &:active {
+         background-color: $dark;
+      }
+   }
+}

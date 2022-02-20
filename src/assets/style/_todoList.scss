@@ -1,0 +1,80 @@
+.todo-list-container {
+   background-color: $black;
+   padding: 3em;
+}
+
+.todo-list {
+   border-top-right-radius: 5px;
+   border-top-left-radius: 5px;
+   background-color: $dark;
+
+   .todo-item {
+      color: $light;
+      border-bottom: 2px solid $midGray;
+      padding: 1em;
+      @include flex();
+
+      &.active {
+         text-decoration: line-through;
+         opacity: 0.5;
+      }
+
+      .complete {
+         height: 20px;
+         width: 20px;
+         border: 2px solid $midGray;
+         border-radius: 100%;
+         cursor: pointer;
+         margin-right: 1em;
+         @include flex($jc: center);
+
+         .check {
+            font-size: 0.8rem;
+            display: none;
+         }
+
+         &.active {
+            background: linear-gradient(
+               -45deg,
+               rgba(12, 79, 224, 0.8),
+               rgba(175, 52, 231, 0.8)
+            );
+
+            .check {
+               display: block;
+            }
+         }
+      }
+
+      .delete {
+         margin-left: auto;
+         cursor: pointer;
+         padding: 0 0 0 0.5em;
+         @include flex($jc: center);
+         transition: all 0.4s ease-in-out;
+
+         &:hover {
+            color: $danger;
+         }
+      }
+   }
+}
+
+.todo-footer {
+   @include flex();
+   background-color: $dark;
+   padding: 1em;
+   border-bottom-right-radius: 5px;
+   border-bottom-left-radius: 5px;
+
+   p {
+      color: $gray;
+      margin: 0;
+      cursor: pointer;
+      text-transform: capitalize;
+
+      .total-items {
+         margin-right: 0.5em;
+      }
+   }
+}
