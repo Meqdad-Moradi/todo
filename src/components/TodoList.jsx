@@ -6,14 +6,12 @@ const TodoList = ({ tasks }) => {
       <div className="todo-list-container">
          <ul className="todo-list">
             {tasks.map((item, index) => {
-               const { id, name } = item;
-
                return (
                   <li className="todo-item" key={index}>
-                     <span className="complete active">
+                     <span className="complete">
                         <FaCheck className="check" />
                      </span>
-                     {name}
+                     {item.title}
                      <span className="delete">
                         <FaTrash />
                      </span>
@@ -26,7 +24,7 @@ const TodoList = ({ tasks }) => {
             <p>
                <span className="total-items">{tasks.length}</span> items left
             </p>
-            <p>Cleare completed</p>
+            <p className="clear">Cleare completed</p>
          </div>
       </div>
    );

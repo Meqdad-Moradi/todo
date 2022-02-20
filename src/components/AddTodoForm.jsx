@@ -2,32 +2,32 @@ import React, { useEffect, useState } from "react";
 import { FaPlus } from "react-icons/fa";
 
 const AddTodoForm = ({ addTask }) => {
-   const [input, setInput] = useState("");
+   const [title, setTitle] = useState("");
    const [error, setError] = useState("");
 
    //    submit form
    const addItems = (e) => {
       e.preventDefault();
 
-      if (input === "") {
+      if (title === "") {
          setError("Plese insert your task to do!");
          return;
       }
-      addTask({ input });
-      setInput("");
+      addTask({ title });
+      setTitle("");
    };
 
    //    read input value
    const setValue = (e) => {
-      setInput(e.currentTarget.value);
+      setTitle(e.currentTarget.value);
    };
 
    //    check focus state of input
    useEffect(() => {
-      if (input !== "" || input !== null) {
+      if (title !== "" || title !== null) {
          setError("");
       }
-   }, [input]);
+   }, [title]);
 
    return (
       <div className="form-container">
@@ -39,7 +39,7 @@ const AddTodoForm = ({ addTask }) => {
                type="text"
                id="input"
                placeholder="New to do..."
-               value={input}
+               value={title}
                onChange={setValue}
             />
             <small className={error !== "" ? "active" : ""}>{error}</small>

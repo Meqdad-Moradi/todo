@@ -193,7 +193,7 @@ select {
 
 .todo-list-container {
   background-color: #18181b;
-  padding: 3em;
+  padding: 3em 3em 1em;
 }
 
 .todo-list {
@@ -317,8 +317,11 @@ select {
 .todo-footer p {
   color: #7a7a85;
   margin: 0;
-  cursor: pointer;
   text-transform: capitalize;
+}
+
+.todo-footer p.clear {
+  cursor: pointer;
 }
 
 .todo-footer p .total-items {

@@ -1,6 +1,6 @@
 .todo-list-container {
    background-color: $black;
-   padding: 3em;
+   padding: 3em 3em 1em;
 }
 
 .todo-list {
@@ -70,8 +70,11 @@
    p {
       color: $gray;
       margin: 0;
-      cursor: pointer;
       text-transform: capitalize;
+
+      &.clear {
+         cursor: pointer;
+      }
 
       .total-items {
          margin-right: 0.5em;
