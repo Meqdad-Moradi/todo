@@ -36,7 +36,7 @@ function App() {
    // show tasks are done
    const showCompletedTasks = () => {
       const tasksDone = tasks.filter((item) => item.completed === true);
-      setTasks(tasksDone);
+      console.log(tasksDone);
    };
 
    return (

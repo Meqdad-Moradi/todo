@@ -86,8 +86,9 @@ select {
 }
 
 .header {
-  min-height: 50vh;
-  background: linear-gradient(45deg, rgba(12, 79, 224, 0.8), rgba(175, 52, 231, 0.8)), url("./../images/background.jpg") no-repeat center/cover;
+  min-height: 40vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(60, 65, 69, 0.5)), to(rgba(0, 0, 0, 0.88))), url("./../images/background.jpg") no-repeat center/cover;
+  background: linear-gradient(180deg, rgba(60, 65, 69, 0.5) 0%, rgba(0, 0, 0, 0.88) 100%), url("./../images/background.jpg") no-repeat center/cover;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -128,13 +129,13 @@ select {
   border-radius: 5px;
   outline: none;
   font-size: 1rem;
-  padding: 0.3em 2.3em 0.3em 1.5em;
+  padding: 0.3em 2.5em 0.3em 2em;
 }
 
 .header form .form-control.check {
   position: absolute;
   top: 50%;
-  left: 5px;
+  left: 10px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   display: -webkit-box;
@@ -147,7 +148,7 @@ select {
 }
 
 .header form .form-control.check input#checkbox {
-  accent-color: #bf44cf;
+  accent-color: #0fd74e;
   -ms-flex-item-align: start;
       -ms-grid-row-align: start;
       align-self: start;
@@ -198,8 +199,8 @@ select {
   right: 5px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  background-color: #bf44cf;
-  color: white;
+  background-color: #0fd74e;
+  color: #313135;
   padding: 0.3em;
   display: -ms-grid;
   display: grid;
@@ -214,6 +215,7 @@ select {
 
 .header .submit-btn:hover, .header .submit-btn:active {
   background-color: #313135;
+  color: white;
 }
 
 .todo-list-container {
@@ -280,10 +282,12 @@ select {
 .todo-list .todo-item .complete .check {
   font-size: 0.8rem;
   display: none;
+  color: #313135;
 }
 
 .todo-list .todo-item .complete.active {
-  background: linear-gradient(-45deg, rgba(12, 79, 224, 0.8), rgba(175, 52, 231, 0.8));
+  background: linear-gradient(-45deg, #0fd74e, #f9f048);
+  border-color: transparent;
 }
 
 .todo-list .todo-item .complete.active .check {
@@ -395,11 +399,11 @@ select {
 }
 
 .todo-filter-container .todo-filter .filter-btn.active {
-  color: #bf44cf;
+  color: #0fd74e;
 }
 
 .todo-filter-container .todo-filter .filter-btn:hover, .todo-filter-container .todo-filter .filter-btn:active {
-  color: #bf44cf;
+  color: #0fd74e;
 }
 
 .footer {

@@ -31,14 +31,16 @@
          .check {
             font-size: 0.8rem;
             display: none;
+            color: $dark;
          }
 
          &.active {
             background: linear-gradient(
                -45deg,
-               rgba(12, 79, 224, 0.8),
-               rgba(175, 52, 231, 0.8)
+               $green,
+               $yellow
             );
+            border-color: transparent;
 
             .check {
                display: block;

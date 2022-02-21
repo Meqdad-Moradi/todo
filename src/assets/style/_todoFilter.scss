@@ -19,12 +19,12 @@
          transition: all 0.3s ease-in-out;
 
          &.active {
-            color: $primary;
+            color: $green;
          }
 
          &:hover,
          &:active {
-            color: $primary;
+            color: $green;
          }
       }
    }

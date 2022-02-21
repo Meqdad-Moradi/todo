@@ -1,34 +1,18 @@
-import React, { useState } from "react";
-import { FaCheck, FaTrash } from "react-icons/fa";
+import React from "react";
+import Todo from "./Todo";
 
 const TodoList = ({ tasks, onDelete, onClear }) => {
-   const [complete, setComplete] = useState(false);
-
-   // make task complete
-   const taskCompleted = (id) => {
-      const item = tasks.filter((task) => task.id === id);
-      setComplete(!complete);
-      console.log(item);
-   };
-
    return (
       <div className="todo-list-container">
          <ul className="todo-list">
             {tasks.map((item, index) => {
-               const { id, title } = item;
                return (
-                  <li className="todo-item" key={index}>
-                     <span
-                        className={complete ? "complete active" : "complete"}
-                        onClick={() => taskCompleted(id)}
-                     >
-                        <FaCheck className="check" />
-                     </span>
-                     {title}
-                     <span className="delete" onClick={() => onDelete(id)}>
-                        <FaTrash />
-                     </span>
-                  </li>
+                  <Todo
+                     key={index}
+                     item={item}
+                     onDelete={onDelete}
+                     tasks={tasks}
+                  />
                );
             })}
          </ul>
