@@ -1,7 +1,7 @@
 import React from "react";
 import Todo from "./Todo";
 
-const TodoList = ({ tasks, onDelete, onClear }) => {
+const TodoList = ({ tasks, setTasks, onDelete, onClear }) => {
    return (
       <div className="todo-list-container">
          <ul className="todo-list">
@@ -12,6 +12,7 @@ const TodoList = ({ tasks, onDelete, onClear }) => {
                      item={item}
                      onDelete={onDelete}
                      tasks={tasks}
+                     setTasks={setTasks}
                   />
                );
             })}

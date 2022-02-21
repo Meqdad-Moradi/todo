@@ -16,7 +16,7 @@
 
       &.active {
          text-decoration: line-through;
-         opacity: 0.5;
+         opacity: 0.8;
       }
 
       .complete {
@@ -35,11 +35,7 @@
          }
 
          &.active {
-            background: linear-gradient(
-               -45deg,
-               $green,
-               $yellow
-            );
+            background: linear-gradient(-45deg, $green, $yellow);
             border-color: transparent;
 
             .check {
@@ -49,10 +45,10 @@
       }
 
       .delete {
+         @include flex($jc: center);
          margin-left: auto;
          cursor: pointer;
          padding: 0 0 0 0.5em;
-         @include flex($jc: center);
          transition: all 0.4s ease-in-out;
 
          &:hover {

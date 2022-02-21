@@ -1,22 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaCheck, FaTrash } from "react-icons/fa";
 
-const Todo = ({ tasks, item, onDelete }) => {
-   const [complete, setComplete] = useState(false);
-   const { id, title } = item;
+const Todo = ({ tasks, setTasks, item, onDelete }) => {
+   const { id, title, completed } = item;
 
    // make task complete
-   const taskCompleted = () => {
-      const item = tasks.filter((task) => task.id === id);
-      setComplete(!complete);
-      console.log(item);
+   const completeHandler = () => {
+      setTasks(
+         tasks.map((task) => {
+            if (task.id === id) {
+               return { ...task, completed: !task.completed };
+            } else {
+               return task;
+            }
+         })
+      );
    };
 
    return (
-      <li className={`todo-item ${complete ? "active" : ""}`}>
+      <li className={`todo-item ${completed ? "active" : ""}`}>
          <span
-            className={complete ? "complete active" : "complete"}
-            onClick={() => taskCompleted(id)}
+            className={completed ? "complete active" : "complete"}
+            onClick={() => completeHandler(id)}
          >
             <FaCheck className="check" />
          </span>

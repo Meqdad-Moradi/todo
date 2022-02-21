@@ -1,10 +1,11 @@
 .footer {
-   padding: 2em;
+   padding: 2em 3em;
    border-top: 1px solid $midGray;
-   background-color: $black;
+   background-color: $dark;
 
    p {
-      color: $midGray;
+      color: $gray;
       margin: 0;
+      text-align: center;
    }
 }

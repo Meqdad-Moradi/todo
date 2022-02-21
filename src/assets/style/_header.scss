@@ -1,12 +1,7 @@
 .header {
    min-height: 40vh;
-   background: linear-gradient(
-         180deg,
-         rgba(#3c4145, 0.5) 0%,
-         rgba(#000000, 0.88) 100%
-      ),
+   background: linear-gradient(-45deg, rgba($yellow, 0.8), rgba($green, 0.8)),
       url("./../images/background.jpg") no-repeat center / cover;
-
    display: grid;
    grid-template-columns: 1fr;
    grid-template-rows: repeat(2, 1fr);
@@ -16,7 +11,7 @@
 
    .title {
       z-index: 100;
-      color: $white;
+      color: $black;
       text-transform: uppercase;
       letter-spacing: 6px;
    }
@@ -27,7 +22,7 @@
       position: relative;
 
       label {
-         color: $white;
+         color: $black;
          display: inline-block;
          position: absolute;
          bottom: 120%;

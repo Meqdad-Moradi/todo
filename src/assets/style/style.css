@@ -87,8 +87,7 @@ select {
 
 .header {
   min-height: 40vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(60, 65, 69, 0.5)), to(rgba(0, 0, 0, 0.88))), url("./../images/background.jpg") no-repeat center/cover;
-  background: linear-gradient(180deg, rgba(60, 65, 69, 0.5) 0%, rgba(0, 0, 0, 0.88) 100%), url("./../images/background.jpg") no-repeat center/cover;
+  background: linear-gradient(-45deg, rgba(249, 240, 72, 0.8), rgba(15, 215, 78, 0.8)), url("./../images/background.jpg") no-repeat center/cover;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -106,7 +105,7 @@ select {
 
 .header .title {
   z-index: 100;
-  color: white;
+  color: #18181b;
   text-transform: uppercase;
   letter-spacing: 6px;
 }
@@ -116,7 +115,7 @@ select {
 }
 
 .header form label {
-  color: white;
+  color: #18181b;
   display: inline-block;
   position: absolute;
   bottom: 120%;
@@ -252,7 +251,7 @@ select {
 
 .todo-list .todo-item.active {
   text-decoration: line-through;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .todo-list .todo-item .complete {
@@ -295,9 +294,6 @@ select {
 }
 
 .todo-list .todo-item .delete {
-  margin-left: auto;
-  cursor: pointer;
-  padding: 0 0 0 0.5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -313,6 +309,9 @@ select {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-left: auto;
+  cursor: pointer;
+  padding: 0 0 0 0.5em;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
@@ -407,13 +406,14 @@ select {
 }
 
 .footer {
-  padding: 2em;
+  padding: 2em 3em;
   border-top: 1px solid #56565d;
-  background-color: #18181b;
+  background-color: #313135;
 }
 
 .footer p {
-  color: #56565d;
+  color: #7a7a85;
   margin: 0;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
