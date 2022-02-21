@@ -15,33 +15,33 @@ function App() {
    const [status, setStatus] = useState("all");
    const [filteredTasks, setFilteredTasks] = useState([]);
 
-   // take the filtered todo's tasks
-   const filteredTodos = () => {
-      switch (status) {
-         case "completed":
-            const completedTasks = tasks.filter(
-               (item) => item.completed === true
-            );
-            setFilteredTasks(completedTasks);
-            break;
-
-         case "active":
-            const activeTasks = tasks.filter(
-               (item) => item.completed === false
-            );
-            setFilteredTasks(activeTasks);
-            break;
-
-         default:
-            setFilteredTasks(tasks);
-            break;
-      }
-   };
-
    // USE EFFECT
    useEffect(() => {
+      // check the filtered todo's tasks
+      const filteredTodos = () => {
+         switch (status) {
+            case "completed":
+               const completedTasks = tasks.filter(
+                  (item) => item.completed === true
+               );
+               setFilteredTasks(completedTasks);
+               break;
+
+            case "active":
+               const activeTasks = tasks.filter(
+                  (item) => item.completed === false
+               );
+               setFilteredTasks(activeTasks);
+               break;
+
+            default:
+               setFilteredTasks(tasks);
+               break;
+         }
+      };
+
       filteredTodos();
-   }, [tasks, status]);
+   }, [status, tasks]);
 
    //  add task method
    const addTask = (task) => {
