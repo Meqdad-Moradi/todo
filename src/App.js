@@ -7,11 +7,7 @@ import TodoList from "./components/TodoList";
 function App() {
    // state stuff
 
-   const [tasks, setTasks] = useState([
-      { id: 1, title: "To do list is very nice 1", completed: false },
-      { id: 2, title: "To do list is very nice 2", completed: true },
-      { id: 3, title: "To do list is very nice 3", completed: false },
-   ]);
+   const [tasks, setTasks] = useState([]);
    const [status, setStatus] = useState("all");
    const [filteredTasks, setFilteredTasks] = useState([]);
 

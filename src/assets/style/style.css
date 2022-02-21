@@ -80,9 +80,8 @@ select {
 }
 
 .container {
-  max-width: 650px;
+  max-width: 768px;
   margin: 0 auto;
-  padding: 0 1em;
 }
 
 .header {
@@ -225,6 +224,7 @@ select {
 .todo-list {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
+  border-radius: 5px;
   background-color: #313135;
 }
 
@@ -311,6 +311,7 @@ select {
           align-items: center;
   margin-left: auto;
   cursor: pointer;
+  font-size: .9rem;
   padding: 0 0 0 0.5em;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
@@ -338,8 +339,7 @@ select {
           align-items: center;
   background-color: #313135;
   padding: 1em;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-radius: 5px;
 }
 
 .todo-footer p {

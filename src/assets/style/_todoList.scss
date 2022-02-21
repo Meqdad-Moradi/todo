@@ -6,6 +6,7 @@
 .todo-list {
    border-top-right-radius: 5px;
    border-top-left-radius: 5px;
+   border-radius: 5px;
    background-color: $dark;
 
    .todo-item {
@@ -48,6 +49,7 @@
          @include flex($jc: center);
          margin-left: auto;
          cursor: pointer;
+         font-size: .9rem;
          padding: 0 0 0 0.5em;
          transition: all 0.4s ease-in-out;
 
@@ -62,8 +64,7 @@
    @include flex();
    background-color: $dark;
    padding: 1em;
-   border-bottom-right-radius: 5px;
-   border-bottom-left-radius: 5px;
+   border-radius: 5px;
 
    p {
       color: $gray;
