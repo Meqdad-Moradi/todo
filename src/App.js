@@ -13,6 +13,16 @@ function App() {
 
    // USE EFFECT
    useEffect(() => {
+      const getData = async () => {
+         const res = await fetch("http://localhost:8000/todo");
+         const data = await res.json();
+         setTasks(data);
+      };
+
+      getData();
+   }, [status]);
+
+   useEffect(() => {
       // check the filtered todo's tasks
       const filteredTodos = () => {
          switch (status) {
@@ -40,21 +50,37 @@ function App() {
    }, [status, tasks]);
 
    //  add task method
-   const addTask = (task) => {
-      const id = Math.floor(Math.random() * 1000 + 1);
-      const newTask = { id, ...task };
-      setTasks([...tasks, newTask]); // update tasks
+   const addTask = async (task) => {
+      const res = await fetch(`http://localhost:8000/todo`, {
+         method: "POST",
+         headers: {
+            "content-type": "application/json",
+         },
+         body: JSON.stringify(task),
+      });
+
+      const data = await res.json();
+      setTasks([...tasks, data]);
    };
 
    // delete task
-   const deleteTask = (id) => {
+   const deleteTask = async (id) => {
       const item = tasks.filter((task) => task.id !== id);
       setTasks(item);
+
+      await fetch(`http://localhost:8000/todo/${id}`, {
+         method: "DELETE",
+      });
    };
 
    // clear completed tasks
-   const clearCompletedTask = (id) => {
+   const clearCompletedTask = async () => {
       const completedTask = tasks.filter((item) => item.completed !== true);
+
+      await fetch(`http://localhost:8000/todo/${completedTask}`, {
+         method: "DELETE",
+      });
+
       setTasks(completedTask);
    };
 

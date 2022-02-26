@@ -5,7 +5,19 @@ const Todo = ({ tasks, setTasks, item, onDelete }) => {
    const { id, title, completed } = item;
 
    // make task complete
-   const completeHandler = () => {
+   const completeHandler = async (item_id) => {
+      // change COMPLETED value
+      const newItem = { ...item, completed: !item.completed };
+
+      await fetch(`http://localhost:8000/todo/${item_id}`, {
+         method: "PUT",
+         headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+         },
+         body: JSON.stringify(newItem),
+      });
+
       setTasks(
          tasks.map((task) => {
             if (task.id === id) {

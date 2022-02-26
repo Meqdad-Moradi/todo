@@ -9,6 +9,7 @@
    box-sizing: border-box;
    padding: 0;
    margin: 0;
+   transition: all .4s ease-in-out;
 }
 
 *::first-letter {
@@ -79,7 +80,7 @@ select {
 }
 
 .container {
-   max-width: 768px;
+   max-width:  550px;
    margin: 0 auto;
    // padding: 0 1em;
 }
